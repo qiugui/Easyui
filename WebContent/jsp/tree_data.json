@@ -1,0 +1,24 @@
+[{
+	"text":"Floder1",
+	"iconCls":"icon-ok",
+	"children":[
+		{
+			"text":"File1",
+			"children":[
+				{
+					"text":"file11"
+				
+				}
+			]
+		},{
+			"text":"File2"
+		}]
+},{
+	"text":"Floder2",
+	"children":[
+		{
+			"text":"File3"
+		},{
+			"text":"File4"
+		}]
+}]
