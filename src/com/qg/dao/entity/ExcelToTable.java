@@ -25,6 +25,13 @@ import org.springframework.stereotype.Repository;
 
 import com.qg.dao.SqlUtil;
 
+/** 
+* @ClassName: ExcelToTable 
+* @Description: 将Excel表格转化成数据库中的表 
+* @author qiugui 
+* @date 2014年12月24日 下午3:19:20 
+*  
+*/ 
 @Repository("excelToTable")
 public class ExcelToTable extends SqlUtil {
 

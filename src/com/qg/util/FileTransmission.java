@@ -16,6 +16,13 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.qg.service.ExcelToTableService;
 
+/** 
+* @ClassName: FileTransmission 
+* @Description: 文件传输类，包括文件的上传与下载 
+* @author qiugui 
+* @date 2014年12月24日 下午4:38:00 
+*  
+*/ 
 @Component("fileTransmission")
 public class FileTransmission {
 
