@@ -21,6 +21,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <form action="${pageContext.request.contextPath }/fileupload/upload.do" method="post" enctype="multipart/form-data">
 
 	<input type="file" name="theFile" />
+	<!-- 隐藏域，用来标记当前页面上传文档模版的名称 -->
+	<input type="hidden" name="fileflag" value="userinfo" />
 	<input type="submit" value="提交" />
 </form>
 </body>

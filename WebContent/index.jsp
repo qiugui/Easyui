@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<jsp:forward page="jsp/filedownload.jsp"></jsp:forward>
+	<jsp:forward page="jsp/fileupload.jsp"></jsp:forward>
 </body>
 </html>

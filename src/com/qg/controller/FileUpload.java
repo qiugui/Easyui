@@ -61,11 +61,13 @@ public class FileUpload {
 	public String fileUpload(@RequestParam("theFile") MultipartFile file,
 			HttpServletRequest request, HttpServletResponse response) {
 
+		String fileflag=request.getParameter("fileflag");
+		
 		// 指定上传文件在服务器中的文件目录
 		String path = request.getSession().getServletContext().getRealPath("/")
 				+ "\\uploadFile\\";
 
-		return fileTransmission.uploadFile(file, path);
+		return fileTransmission.uploadFile(file, path,fileflag);
 
 	}
 
