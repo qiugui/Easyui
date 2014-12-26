@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.transaction.Transactional;
 
 
+
 import net.sf.json.JSONArray;
 
 import org.springframework.stereotype.Controller;
@@ -62,13 +63,37 @@ public class FileUpload {
 			HttpServletRequest request, HttpServletResponse response) {
 
 		String fileflag=request.getParameter("fileflag");
+
+		String fileOriginName=file.getOriginalFilename();
+		/*
+		 * 判断上传文件是否是该模块页面对应的指定模版文件
+		 */
+		//获取上传文件的文件名
+		if("".equals(fileOriginName)){
+			return "fail3";
+		}
+		String fileName=fileOriginName.substring(0, file.getOriginalFilename().indexOf("."));
+		// 获取上传文件的后缀名
+		String suffix = fileOriginName.substring(file.getOriginalFilename().lastIndexOf("."));
 		
+		if ("userinfo".equals(fileflag) && !"用户信息".equals(fileName)){
+			return "fail3";
+		}
+		
+		if (!(".xlsx".equals(suffix) || ".xls".equals(suffix))){
+			return "fail1";
+		}
+		
+		if (file.isEmpty()){
+			return "fail2";
+		}
+
 		// 指定上传文件在服务器中的文件目录
 		String path = request.getSession().getServletContext().getRealPath("/")
 				+ "\\uploadFile\\";
 
 		return fileTransmission.uploadFile(file, path,fileflag);
-
+		
 	}
 
 	/**   

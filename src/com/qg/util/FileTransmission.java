@@ -41,7 +41,6 @@ public class FileTransmission {
 	 */
 	 
 	public String uploadFile(MultipartFile file, String path,String fileflag) {
-		if (!file.isEmpty()) {
 
 			// 若文件目录不存在，则创建文件目录
 			if (!new File(path).exists()) {
@@ -51,34 +50,24 @@ public class FileTransmission {
 			// 以系统当前时间作为上传文件的文件名
 			Date date = new Date();
 			String fileName = simpleDateFormat.format(date);
-			
 			// 获取上传文件的后缀名
-			String suffix = file.getOriginalFilename().substring(
-					file.getOriginalFilename().lastIndexOf("."));
+			String suffix = file.getOriginalFilename().substring(file.getOriginalFilename().lastIndexOf("."));
+			// 拼接上传文件的全路径&文件名
+			String filePath = path + fileName + suffix;
 			
-			// 只允许上传Excel格式的文件
-			if (".xlsx".equals(suffix) || ".xls".equals(suffix)) {
-				
-				// 拼接上传文件的全路径&文件名
-				String filePath = path + fileName + suffix;
-				
-				try {
-					// 将文件上传至服务器指定文件夹
-					file.transferTo(new File(filePath));
+			try {
+				// 将文件上传至服务器指定文件夹
+				file.transferTo(new File(filePath));
 
-					excelToTableService.eTt(filePath,suffix);
+				excelToTableService.eTt(filePath,suffix,fileflag);
 
-				} catch (Exception e) {
-					e.printStackTrace();
-					return "fail";
-				}
-				return "success";
-			} else {
-				return "fail1";
+			} catch (Exception e) {
+				e.printStackTrace();
+				return "fail";
 			}
-		} else {
-			return "fail2";
-		}
+			
+			return "success";
+
 	}
 
 	public void downloadFile(HttpServletResponse response, String path) {

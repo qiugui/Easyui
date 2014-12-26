@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<jsp:forward page="jsp/fileTrans.jsp"></jsp:forward>
+请上传指定Excel文件
 </body>
 </html>

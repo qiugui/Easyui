@@ -1,7 +1,7 @@
  package com.qg.domain;
 
-import org.springframework.stereotype.Repository;
- @Repository("myFile")
+import org.springframework.stereotype.Component;
+ @Component("myFile")
  public class MyFile {
 	 private String id;
 	 private String fileName;

@@ -1,10 +1,15 @@
  package com.qg.domain;
+
+import org.springframework.stereotype.Component;
+ @Component("city")
  public class City {
 
 	 private int cityId;
 	 private String cityName;
 	 
-	 
+	 public City(){
+		 
+	 }
 	 
 	public City(int cityId, String cityName) {
 		super();
