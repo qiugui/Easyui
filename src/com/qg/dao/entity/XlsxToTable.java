@@ -62,7 +62,7 @@ public class XlsxToTable extends SqlUtil {
 			}
 
 			// 循环列Cell
-			for (int cellNum = 0; cellNum < xssfRow.getLastCellNum(); cellNum++) {
+			for (int cellNum = 1; cellNum < xssfRow.getLastCellNum(); cellNum++) {
 				XSSFCell xssfCell = xssfRow.getCell(cellNum);
 				if (xssfCell == null) {
 					continue;

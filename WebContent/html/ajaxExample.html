@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+	<meta http-equiv="Access-Control-Allow-Origin" content="*">
+</head>
+<body>
+	<div id="mydiv"><h2>My div</h2></div><br>
+	<button type="button" onclick="loadxmldoc()">Change Content</button>
+
+	<script>
+		function loadxmldoc(){
+			var xmlhttp;
+			<!--判断浏览器是否支持XMLHttpRequest-->
+			if(window.XMLHttpRequest){
+				xmlhttp = new XMLHttpRequest();
+			} else {
+				<!--For IE5 IE6-->
+				xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+			}
+			xmlhttp.onreadystatechange=function(){
+				if (xmlhttp.readyState==4 && xmlhttp.status==200)
+					{
+						var string = xmlhttp.responseText;
+						document.getElementById("mydiv").innerHTML=string;
+					}
+				}
+			xmlhttp.open("GET","http://127.0.0.1:8080/Easyui/test/test1.do",true);
+			xmlhttp.send();
+		}
+	</script>
+</body>
+</html>
