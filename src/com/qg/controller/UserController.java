@@ -35,7 +35,6 @@ import com.qg.service.UserService;
 		 try {
 			list=userService.findAll();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			 e.printStackTrace();
 			 
 		}
@@ -45,7 +44,6 @@ import com.qg.service.UserService;
 		 try {
 			response.getWriter().write(json);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			 e.printStackTrace();
 			 
 		}
@@ -82,7 +80,6 @@ import com.qg.service.UserService;
 		 try {
 			response.getWriter().write(string);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			 e.printStackTrace();
 			 
 		}
@@ -127,7 +124,6 @@ import com.qg.service.UserService;
 			try {
 				response.getWriter().write(info);
 			} catch (IOException e1) {
-				// TODO Auto-generated catch block
 				 e1.printStackTrace();
 				 
 			}
